@@ -1,0 +1,39 @@
+.wrapper{
+  max-width: 46rem;
+  margin: -1.5rem auto 2rem auto;
+
+  padding: 0 1rem;
+}
+
+.taskListWrapper{
+  margin-top: 4rem;
+}
+
+.taskList__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskList__body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+
+  margin: 1.5rem 0;
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+}
+
+.taskList_empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0;
+}
+

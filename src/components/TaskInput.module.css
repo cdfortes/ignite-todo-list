@@ -1,0 +1,45 @@
+
+.taskInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  gap: 0.5rem;
+
+}
+
+
+.taskInput{
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  color: var(--gray-300);
+  padding: 1rem;
+  flex:1;
+  font-size: 1rem;
+}
+
+.taskInput:focus{
+  outline: none;
+  border: 1px solid var(--purple-dark);
+  color: var(--gray-100);
+}
+
+.taskButton{
+  background-color: var(--blue-dark);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  transition: 0.3ms background-color ease-in-out;
+}
+
+.taskButton:hover{
+  background-color: var(--blue);
+  cursor: pointer;
+}
