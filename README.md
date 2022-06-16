@@ -1,3 +1,3 @@
-# Ignite Feed
+# Ignite Challenge
 
 
