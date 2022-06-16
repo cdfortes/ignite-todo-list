@@ -28,6 +28,7 @@
 body {
     background: var(--gray-600);
     color: var(--gray-300);
+    line-height: 1.25rem;
     -webkit-font-smoothing: antialiased;
   }
 
