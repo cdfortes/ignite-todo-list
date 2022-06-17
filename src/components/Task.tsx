@@ -21,12 +21,12 @@ export function Task({ tasks, onCheck, onDelete }: TaskListProps) {
           <div className={styles.taskInfo}>
             <input
               type="checkbox"
-              name="task"
-              id="task"
+              name={`task-${task.id}`}
+              id={`task-${task.id}`}
               defaultChecked={task.completed}
               onClick={() => onCheck(task.id)}
             />
-            <label htmlFor="task">{task.title}</label>
+            <label htmlFor={`task-${task.id}`}>{task.title}</label>
           </div>
           <button title="Deletar tarefa" onClick={() => onDelete(task.id)}>
             <Trash />
