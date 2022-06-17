@@ -2,7 +2,13 @@ import { PlusCircle } from 'phosphor-react'
 
 import styles from './TaskInput.module.css'
 
-export function TaskInput() {
+interface TaskInputProps {
+  onAdd: () => void
+  value: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export function TaskInput({ onAdd, value, onChange }: TaskInputProps) {
   return (
     <div className={styles.taskInputWrapper}>
       <input
@@ -11,8 +17,15 @@ export function TaskInput() {
         id="task"
         placeholder="Adicione uma nova tarefa"
         className={styles.taskInput}
+        value={value}
+        onChange={onChange}
       />
-      <button type="button" className={styles.taskButton}>
+      <button
+        type="submit"
+        className={styles.taskButton}
+        onClick={onAdd}
+        disabled={!value ? false : true}
+      >
         Criar <PlusCircle size={24} />
       </button>
     </div>
