@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { api } from '../services/api'
+import { mirageServer } from '../services/server'
 import { EmptyList } from './EmptyList'
 import { Task } from './Task'
 import { TaskInput } from './TaskInput'
@@ -10,43 +12,17 @@ interface Task {
   completed: boolean
 }
 
-const myTasks: Array<Task> = [
-  {
-    id: 1,
-    title:
-      'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    completed: false
-  },
-  {
-    id: 2,
-    title:
-      'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    completed: false
-  },
-  {
-    id: 3,
-    title:
-      'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    completed: false
-  },
-  {
-    id: 4,
-    title:
-      'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    completed: true
-  },
-  {
-    id: 5,
-    title:
-      'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    completed: true
-  }
-]
+if (process.env.NODE_ENV === 'development') {
+  mirageServer()
+}
 
 export function TaskList() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [tasks, setTasks] = useState<Array<Task>>(myTasks)
+  const [tasks, setTasks] = useState<Array<Task>>([])
   const [newTaskTitle, setnewTaskTitle] = useState<string>('')
+
+  useEffect(() => {
+    api.get('todos').then((response) => setTasks(response.data.todos))
+  }, [])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setnewTaskTitle(event.target.value)
