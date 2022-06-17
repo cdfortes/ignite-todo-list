@@ -1,0 +1,40 @@
+.taskListWrapper{
+  margin-top: 4rem;
+}
+
+.taskList__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.taskList__header h5{
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1.22;
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.taskList__header h5 span{
+  background-color: var(--gray-400);
+  border-radius: 12px;
+  padding: 0.125rem 0.5rem;
+  color: var(--gray-200);
+  font-size: .75rem;
+  line-height: 1.25;
+}
+
+.taskCreated{
+  color: var(--blue);
+}
+
+.taskDone{
+  color: var(--purple);
+}
+
+
+

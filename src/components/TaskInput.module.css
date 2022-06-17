@@ -19,14 +19,12 @@
 }
 
 .taskInput:focus{
-  outline: none;
-  border: 1px solid var(--purple-dark);
   color: var(--gray-100);
 }
 
 .taskButton{
   background-color: var(--blue-dark);
-  padding: 1rem;
+  padding: .9rem;
   border: none;
   border-radius: 8px;
   color: var(--gray-100);
@@ -34,6 +32,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 
   transition: 0.3ms background-color ease-in-out;
@@ -42,4 +41,22 @@
 .taskButton:hover{
   background-color: var(--blue);
   cursor: pointer;
+}
+
+.taskButton:disabled{
+  
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 428px) {
+  .taskInputWrapper {
+     flex-wrap: wrap;
+
+  }
+
+  .taskButton{
+    width: 100%;
+
+  }
 }
