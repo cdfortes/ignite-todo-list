@@ -43,6 +43,11 @@
   cursor: pointer;
 }
 
+.taskButton:disabled{
+  
+  cursor: not-allowed;
+}
+
 
 @media (max-width: 428px) {
   .taskInputWrapper {

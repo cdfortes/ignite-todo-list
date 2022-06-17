@@ -24,7 +24,7 @@ export function TaskInput({ onAdd, value, onChange }: TaskInputProps) {
         type="submit"
         className={styles.taskButton}
         onClick={onAdd}
-        disabled={!value ? false : true}
+        disabled={!value}
       >
         Criar <PlusCircle size={24} />
       </button>

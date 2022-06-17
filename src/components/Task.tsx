@@ -10,9 +10,10 @@ interface Task {
 interface TaskListProps {
   tasks: Array<Task>
   onCheck: (id: number) => void
+  onDelete: (id: number) => void
 }
 
-export function Task({ tasks, onCheck }: TaskListProps) {
+export function Task({ tasks, onCheck, onDelete }: TaskListProps) {
   return (
     <ul className={styles.taskList}>
       {tasks.map((task) => (
@@ -22,12 +23,12 @@ export function Task({ tasks, onCheck }: TaskListProps) {
               type="checkbox"
               name="task"
               id="task"
-              checked={task.completed}
+              defaultChecked={task.completed}
               onClick={() => onCheck(task.id)}
             />
             <label htmlFor="">{task.title}</label>
           </div>
-          <button title="Deletar tarefa">
+          <button title="Deletar tarefa" onClick={() => onDelete(task.id)}>
             <Trash />
           </button>
         </li>

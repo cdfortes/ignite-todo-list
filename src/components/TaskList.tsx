@@ -72,7 +72,12 @@ export function TaskList() {
     setTasks(newTasks)
   }
 
-  const completedTasks = tasks.filter((task) => task.completed)
+  const handleRemoveTask = (id: number) => {
+    const newTasks = tasks.filter((task) => task.id !== id)
+    setTasks(newTasks)
+  }
+
+  const completedTasks = tasks.filter((task) => task.completed).length
 
   return (
     <>
@@ -89,15 +94,19 @@ export function TaskList() {
           <h5 className={styles.taskDone}>
             Concluídas{' '}
             <span>
-              {completedTasks.length} de {tasks.length}
+              {completedTasks ? `${completedTasks} de ${tasks.length}` : 0}
             </span>
           </h5>
         </div>
 
-        {!tasks ? (
+        {!tasks.length ? (
           <EmptyList />
         ) : (
-          <Task tasks={tasks} onCheck={handleToggleTaskCompletion} />
+          <Task
+            tasks={tasks}
+            onCheck={handleToggleTaskCompletion}
+            onDelete={handleRemoveTask}
+          />
         )}
       </main>
     </>
