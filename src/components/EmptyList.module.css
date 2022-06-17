@@ -1,0 +1,40 @@
+
+.taskList__body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+
+  margin: 1.5rem 0;
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+}
+
+
+.taskList_empty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0;
+}
+
+.taskList__empty > svg{
+  color: var(--gray-400);
+  margin: 1rem;
+
+}
+
+.taskList__empty p{
+  color: var(--gray-300);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.375;
+}
+
+.taskList__empty p +p{
+  font-weight: 400;
+}
